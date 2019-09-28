@@ -15,6 +15,8 @@
 		BB190BD82338A456003CE15B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB190BD62338A456003CE15B /* LaunchScreen.storyboard */; };
 		BB190BE32338A457003CE15B /* TodoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB190BE22338A457003CE15B /* TodoTests.swift */; };
 		BB190BEE2338A457003CE15B /* TodoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB190BED2338A457003CE15B /* TodoUITests.swift */; };
+		BB190C02233E52AF003CE15B /* TodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB190C01233E52AF003CE15B /* TodoTableViewCell.swift */; };
+		BB190C08233E6553003CE15B /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB190C07233E6553003CE15B /* TodoTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BB190BE92338A457003CE15B /* TodoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TodoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB190BED2338A457003CE15B /* TodoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoUITests.swift; sourceTree = "<group>"; };
 		BB190BEF2338A457003CE15B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB190C01233E52AF003CE15B /* TodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewCell.swift; sourceTree = "<group>"; };
+		BB190C07233E6553003CE15B /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				BB190BD42338A456003CE15B /* Assets.xcassets */,
 				BB190BD62338A456003CE15B /* LaunchScreen.storyboard */,
 				BB190BD92338A456003CE15B /* Info.plist */,
+				BB190C01233E52AF003CE15B /* TodoTableViewCell.swift */,
+				BB190C07233E6553003CE15B /* TodoTableViewController.swift */,
 			);
 			path = Todo;
 			sourceTree = "<group>";
@@ -260,8 +266,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB190BD02338A454003CE15B /* ViewController.swift in Sources */,
+				BB190C08233E6553003CE15B /* TodoTableViewController.swift in Sources */,
 				BB190BCC2338A454003CE15B /* AppDelegate.swift in Sources */,
 				BB190BCE2338A454003CE15B /* SceneDelegate.swift in Sources */,
+				BB190C02233E52AF003CE15B /* TodoTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
