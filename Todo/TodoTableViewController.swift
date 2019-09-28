@@ -11,12 +11,15 @@ import UIKit
 class TodoTableViewController: UITableViewController {
     
     var todoArray:[String] = []
+    var selectedText:String?
     
     let saveData = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        tableView.delegate = self
+        tableView.dataSource = self
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -89,9 +92,22 @@ class TodoTableViewController: UITableViewController {
     }
     
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       print("\(indexPath.row)番のセルを選択しました！ ")
-    
+    selectedText = todoArray[indexPath.row]
+    //print("\(indexPath.row)番のセルを選択しました！ ")
+    //print("\(todoArray[indexPath.row])番のセルを選択しました！ ")
+    performSegue(withIdentifier: "edit", sender: nil)
    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+               if (segue.identifier == "edit") {
+                   //let secondVC: ViewController = (segue.destination as? ViewController)!
+       //secondVC.text = selectedText!
+                let nextView = (segue.destination as! ViewController)?
+                nextView.before = selectedText
+                //nextView.todoTextField.text = selectedText
+               }
+           }
+    
     
     /*
     // Override to support rearranging the table view.
