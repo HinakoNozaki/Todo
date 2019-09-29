@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var todoTextField: UITextField!
     
@@ -16,11 +16,16 @@ class ViewController: UIViewController {
     var before:String = ""
     
     let saveData = UserDefaults.standard
+    let editor = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //todoTextField.text = before
+       
         
+        if editor.string(forKey: "change") != nil {
+            todoTextField.text = editor.string(forKey: "change")
+            editor.removeObject(forKey: "change")
+        }
         if saveData.array(forKey: "task") != nil {
             todoArray = saveData.array(forKey: "task") as! [String]
         }
@@ -34,10 +39,23 @@ class ViewController: UIViewController {
     }
     
     @IBAction func save() {
+        let inputWord = todoTextField.text!
+        
+        if editor.string(forKey: "number") != nil {
+            var num: Int = editor.integer(forKey: "number")
+            todoArray[num] = inputWord
+            editor.removeObject(forKey: "number")
+        }else {
         todoArray.append(todoTextField.text!)
+        }
         saveData.set(todoArray, forKey: "task")
         
         todoTextField.text = ""
+        
+        //self.navigationController?.popViewController(animated: true)
+        
+        self.dismiss(animated: true, completion: nil)
+ 
     }
     
 }

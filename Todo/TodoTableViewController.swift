@@ -14,6 +14,7 @@ class TodoTableViewController: UITableViewController {
     var selectedText:String?
     
     let saveData = UserDefaults.standard
+    let editor = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,10 +95,15 @@ class TodoTableViewController: UITableViewController {
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     selectedText = todoArray[indexPath.row]
     //print("\(indexPath.row)番のセルを選択しました！ ")
-    //print("\(todoArray[indexPath.row])番のセルを選択しました！ ")
+    //print("\(todoArray[indexPath.row])を選択しました！ ")
+    
+    let word = todoArray[indexPath.row]
+    let num = indexPath.row
+    editor.set(word, forKey: "change")
+    editor.set(num, forKey: "number")
     performSegue(withIdentifier: "edit", sender: nil)
    }
-    
+    /*
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                if (segue.identifier == "edit") {
                    //let secondVC: ViewController = (segue.destination as? ViewController)!
@@ -107,7 +113,7 @@ class TodoTableViewController: UITableViewController {
                 //nextView.todoTextField.text = selectedText
                }
            }
-    
+    */
     
     /*
     // Override to support rearranging the table view.
