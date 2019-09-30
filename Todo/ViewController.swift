@@ -21,7 +21,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
        
-        
+        self.todoTextField.delegate = self
         if editor.string(forKey: "change") != nil {
             todoTextField.text = editor.string(forKey: "change")
             editor.removeObject(forKey: "change")
@@ -56,6 +56,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         self.dismiss(animated: true, completion: nil)
  
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        todoTextField.resignFirstResponder()
+        return true
     }
     
 }
